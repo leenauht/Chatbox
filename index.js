@@ -24,6 +24,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on(EVENT_NAME.CHAT_MESSAGE, (dataMessage) => {
+    console.log(dataMessage);
     io.emit(EVENT_NAME.CHAT_MESSAGE, {
       ...dataMessage,
       time: new Date(),
