@@ -17,6 +17,8 @@ const EVENT_NAME = {
 
 io.on("connection", (socket) => {
   socket.on(EVENT_NAME.TYPING, (typing) => {
+    console.log("---------Typing-Message-------");
+    console.log(typing);
     io.emit(EVENT_NAME.TYPING, {
       ...typing,
       time: new Date(),
