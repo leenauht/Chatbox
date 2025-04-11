@@ -24,6 +24,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on(EVENT_NAME.CHAT_MESSAGE, (dataMessage) => {
+    console.log("---------Chat-Message-------");
     console.log(dataMessage);
     io.emit(EVENT_NAME.CHAT_MESSAGE, {
       ...dataMessage,
@@ -36,6 +37,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
-  console.log("Server running at http://localhost:3001");
-});
+// server.listen(3001, () => {
+//   console.log("Server running at http://localhost:3001");
+// });
